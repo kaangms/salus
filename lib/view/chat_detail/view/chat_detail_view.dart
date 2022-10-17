@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
@@ -50,6 +51,7 @@ class ChatDetailView extends StatelessWidget {
                 return buildChatDetail(context, viewModel);
               }),
             ),
+            Platform.isAndroid ? const SizedBox(height: 10) : const SizedBox.shrink(),
             messageTextFormField(context, viewModel)
           ],
         ),
@@ -123,7 +125,7 @@ class ChatDetailView extends StatelessWidget {
                       radius: 20.0,
                       child: Icon(
                         Icons.send,
-                        size: 30,
+                        size: 20,
                       ),
                     ),
                   ),
