@@ -11,6 +11,8 @@ import '../../_product/widget/salus_appbar.dart';
 import '../../_product/widget/salus_avatar.dart';
 import '../../_product/widget/salus_badge.dart';
 import '../view_model/chat_view_model.dart';
+part './subview/loading_card.dart';
+part './subview/chat_header_page_card.dart';
 
 class ChatView extends StatelessWidget {
   const ChatView({Key? key}) : super(key: key);
@@ -35,63 +37,7 @@ class ChatView extends StatelessWidget {
                 // physics: const ClampingScrollPhysics(),
                 shrinkWrap: true,
                 children: [
-                  Container(
-                    color: context.colors.surface,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 8),
-                      child: Row(
-                        children: [
-                          Expanded(
-                            flex: 6,
-                            child: Padding(
-                              padding: const EdgeInsets.only(right: 8.0),
-                              child: Container(
-                                alignment: Alignment.center,
-                                height: 40,
-                                decoration: BoxDecoration(
-                                  color: context.colors.primaryContainer,
-                                  borderRadius: const BorderRadius.all(Radius.circular(8)),
-                                ),
-                                child: const Text(
-                                  'Danışanlar',
-                                  style: TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w700,
-                                    color: Colors.white,
-                                    letterSpacing: 0.1,
-                                    fontFamily: 'NunitoSans',
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            flex: 6,
-                            child: Padding(
-                              padding: const EdgeInsets.only(left: 8.0),
-                              child: Container(
-                                  alignment: Alignment.center,
-                                  height: 40,
-                                  decoration: const BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.all(Radius.circular(8)),
-                                  ),
-                                  child: Text(
-                                    'Profesyoneller',
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w700,
-                                      color: context.colors.secondary,
-                                      letterSpacing: 0.1,
-                                      fontFamily: 'NunitoSans',
-                                    ),
-                                  )),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  buldChatHeadePageCard(context),
                   buildLoadingPage(viewModel),
                   Observer(builder: (_) {
                     return ListView.builder(
@@ -108,22 +54,6 @@ class ChatView extends StatelessWidget {
                 ],
               ),
             ));
-  }
-
-  Observer buildLoadingPage(ChatViewModel viewModel) {
-    return Observer(
-        builder: (_) => viewModel.initialLoading
-            ? Column(
-                children: const [
-                  SizedBox(
-                    height: 30,
-                  ),
-                  CircularProgressIndicator.adaptive(
-                    strokeWidth: 2,
-                  ),
-                ],
-              )
-            : const SizedBox.shrink());
   }
 
   Widget buildChatCard(BuildContext context, ChatViewModel viewModel, ChatResult chatResult) {
