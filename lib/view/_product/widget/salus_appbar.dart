@@ -51,12 +51,12 @@ class SalusAppBar extends AppBar {
             InkWell(
               onTap: null,
               child: Padding(
-                padding: EdgeInsets.only(
+                padding: const EdgeInsets.only(
                   bottom: 5,
                   top: 2,
                 ),
                 child: Padding(
-                  padding: EdgeInsets.only(left: 18.0),
+                  padding: const EdgeInsets.only(left: 18.0),
                   child: SvgPicture.asset(
                     SVGImagePath.instance.profileSVG,
                     // color: context.colors.onSurface,
@@ -67,13 +67,13 @@ class SalusAppBar extends AppBar {
             InkWell(
               onTap: null,
               child: Padding(
-                padding: EdgeInsets.only(
+                padding: const EdgeInsets.only(
                   bottom: 5,
                   top: 2,
                   right: 20,
                 ),
                 child: Padding(
-                  padding: EdgeInsets.only(left: 18.0),
+                  padding: const EdgeInsets.only(left: 18.0),
                   child: SvgPicture.asset(
                     SVGImagePath.instance.notificationSVG,
                     // color: context.colors.onSurface,
