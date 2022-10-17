@@ -8,5 +8,7 @@ class SVGImagePath {
   final homeSVG = 'home'.toSVG;
   final messageSVG = 'message'.toSVG;
   final backSVG = 'back'.toSVG;
+  final profileSVG = 'profile'.toSVG;
+  final notificationSVG = 'notification'.toSVG;
 }
 //sold_out

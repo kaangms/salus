@@ -47,7 +47,7 @@ class SalusAppBar extends AppBar {
               ],
             ),
           ),
-          actions: const [
+          actions: [
             InkWell(
               onTap: null,
               child: Padding(
@@ -56,13 +56,12 @@ class SalusAppBar extends AppBar {
                   top: 2,
                 ),
                 child: Padding(
-                    padding: EdgeInsets.only(left: 18.0),
-                    child: Icon(
-                      //Todo:change icon
-                      Icons.person,
-                      color: Colors.black,
-                      size: 35,
-                    )),
+                  padding: EdgeInsets.only(left: 18.0),
+                  child: SvgPicture.asset(
+                    SVGImagePath.instance.profileSVG,
+                    // color: context.colors.onSurface,
+                  ),
+                ),
               ),
             ),
             InkWell(
@@ -74,12 +73,12 @@ class SalusAppBar extends AppBar {
                   right: 20,
                 ),
                 child: Padding(
-                    padding: EdgeInsets.only(left: 18.0),
-                    child: Icon(
-                      Icons.notifications_none,
-                      color: Colors.grey,
-                      size: 35,
-                    )),
+                  padding: EdgeInsets.only(left: 18.0),
+                  child: SvgPicture.asset(
+                    SVGImagePath.instance.notificationSVG,
+                    // color: context.colors.onSurface,
+                  ),
+                ),
               ),
             ),
           ],
